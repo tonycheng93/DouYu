@@ -101,3 +101,85 @@ eg:获取英雄联盟这个分类下面的房间列表：
 |url|房间的网址|http://www.douyu.com/linxb|
 
 返回错误时：错误码501
+```json
+{
+  "error": 501,
+  "data": "不存在此分类"
+}
+```
+
+### 3.3.获取直播房间详情信息 /api/RoomApi/room/{房间ID或者房间别名}
+
+http://open.douyucdn.cn/api/RoomApi/room/{房间ID或者房间别名}
+
+eg:[http://open.douyucdn.cn/api/RoomApi/room/19](http://open.douyucdn.cn/api/RoomApi/room/19)
+
+```json
+{
+  "error": 0,
+  "data": {
+    "room_id": "19",
+    "room_thumb": "https://rpic.douyucdn.cn/a1610/10/05/19_161010052156.jpg",
+    "cate_id": "5",
+    "cate_name": "魔兽世界",
+    "room_name": "&lt;嗯哼熊&gt;转播美服八强比赛",
+    "room_status": "2",
+    "owner_name": "yookoN",
+    "avatar": "https://apic.douyucdn.cn/upload/avatar/000/00/06/58_avatar_big.jpg?rltime",
+    "online": 0,
+    "owner_weight": "915.783kg",
+    "fans_num": "5091",
+    "start_time": "2016-10-10 00:04",
+    "gift": [
+      {
+        "id": "196",
+        "name": "火箭",
+        "type": "2",
+        "pc": 500,
+        "gx": 5000,
+        "desc": "赠送网站广播并派送出神秘宝箱",
+        "intro": "我们的征途是星辰大海",
+        "mimg": "http://staticlive.douyucdn.cn/upload/dygift/1606/26f802520cf0e4d8a645259bbc1aadf3.png",
+        "himg": "http://staticlive.douyucdn.cn/upload/dygift/1606/39b578b3cb8645b54f9a1001c392a237.gif"
+      },
+```
+返回成功时：data里为每一项房间信息
+
+|字段名|字段解释|字段样例|
+|:------:|:------:|:-------:|
+|room_id|房间ID|19|
+|room_thumb|房间图片，大小320x180|https://rpic.douyucdn.cn/a1610/10/05/19_161010052156.jpg|
+|cate_id|房间所属分类ID|19|
+|cate_name|房间所属分类名称|魔兽世界|
+|room_name|房间名称|&lt;嗯哼熊&gt;转播美服八强比赛|
+|room_status|房间开播状态|1（表示开播），2（表示关播）|
+|start_time|最近开播时间|2016-10-10 00:04|
+|owner_name|房间所属主播昵称|yookoN|
+|avatar|房间所属主播头像地址|https://apic.douyucdn.cn/upload/avatar/000/00/06/58_avatar_big.jpg?rltime|
+|online|在线人数|0|
+|owner_weight|直播间主播体重|915.783kg|
+|fans_num|直播间关注数|5091|
+|gift|直播间礼物信息数组列表|JSON数组，参数详情请查看下面的礼物参数描述|
+
+gift礼物信息列表中的参数描述详情如下：
+
+|字段名|字段解释|字段样例|
+|:------:|:------:|:------:|
+|id|礼物ID|196|
+|name|礼物名称|火箭|
+|type|礼物类型|1（鱼丸礼物）；2（鱼翅礼物）|
+|pc|价格|鱼翅礼物（元）/鱼丸礼物（鱼丸）|
+|gx|贡献值|5000|
+|desc|礼物描述|赠送网站广播并派送出神秘宝箱|
+|intro|礼物介绍|我们的征途是星辰大海|
+|mimg|礼物图标静态图片地址|http://staticlive.douyucdn.cn/upload/dygift/1606/26f802520cf0e4d8a645259bbc1aadf3.png|
+|himg|礼物图标动态图片地址|http://staticlive.douyucdn.cn/upload/dygift/1606/39b578b3cb8645b54f9a1001c392a237.gif|
+
+返回错误时：
+
+|错误码|错误提示信息|
+|:------:|:------:|
+|101|房间未找到|
+|102|房间未激活|
+|103|房间获取错误|
+
