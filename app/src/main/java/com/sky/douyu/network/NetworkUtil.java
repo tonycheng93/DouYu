@@ -1,4 +1,4 @@
-package com.sky.douyu.utils;
+package com.sky.douyu.network;
 
 import com.sky.douyu.config.Constant;
 
@@ -14,6 +14,7 @@ public class NetworkUtil {
     public static Retrofit ApiRequest() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constant.BASE_URL)
+//                .addCallAdapterFactory()
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit;

@@ -1,17 +1,13 @@
 package com.sky.douyu.entity;
 
-import com.sky.douyu.entity.game.GameList;
-
-import java.util.List;
-
 /**
  * Created by tonycheng on 2016/10/11.
  */
 
-public class BaseWrapper {
+public class BaseWrapper<T> {
 
     private int error;
-    private List<GameList> data;
+    private T data;
 
     public int getError() {
         return error;
@@ -21,11 +17,11 @@ public class BaseWrapper {
         this.error = error;
     }
 
-    public List<GameList> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(List<GameList> data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
