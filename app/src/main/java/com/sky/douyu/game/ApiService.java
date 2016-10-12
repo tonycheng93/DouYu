@@ -13,6 +13,15 @@ import rx.Observable;
  */
 
 public interface ApiService {
+
+    /**
+     * private T data;
+     * HttpResult<T>
+     * 若data是一个对象（User），则 Observable<HttpResult<User>>
+     * 若data是一个集合（User），则 Observable<HttpResult<List<User>>>
+     *
+     * @return
+     */
     @GET("/game")
     Observable<HttpResult<List<GameList>>> getGameList();
 }
