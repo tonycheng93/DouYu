@@ -4,7 +4,7 @@ package com.sky.douyu.entity;
  * Created by tonycheng on 2016/10/11.
  */
 
-public class BaseWrapper<T> {
+public class HttpResult<T> {
 
     private int error;
     private T data;

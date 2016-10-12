@@ -1,6 +1,6 @@
 package com.sky.douyu.network;
 
-import com.sky.douyu.entity.BaseWrapper;
+import com.sky.douyu.entity.HttpResult;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -9,7 +9,7 @@ import retrofit2.Response;
  * Created by tonycheng on 2016/10/11.
  */
 
-public abstract class Callback<T extends BaseWrapper>
+public abstract class Callback<T extends HttpResult>
         implements retrofit2.Callback<T> {
     @Override
     public void onResponse(Call<T> call, Response<T> response) {

@@ -1,6 +1,6 @@
 package com.sky.douyu.game;
 
-import com.sky.douyu.entity.BaseWrapper;
+import com.sky.douyu.entity.HttpResult;
 import com.sky.douyu.entity.game.GameList;
 
 import java.util.List;
@@ -14,5 +14,5 @@ import rx.Observable;
 
 public interface ApiService {
     @GET("/game")
-    Observable<BaseWrapper<List<GameList>>> getGameList();
+    Observable<HttpResult<List<GameList>>> getGameList();
 }
