@@ -3,6 +3,8 @@ package com.sky.douyu.network;
 import com.sky.douyu.entity.HttpResult;
 import com.sky.douyu.entity.game.GameList;
 
+import java.util.List;
+
 import retrofit2.http.GET;
 import rx.Observable;
 
@@ -13,5 +15,5 @@ import rx.Observable;
 public interface ApiService {
 
     @GET("/game")
-    Observable<HttpResult<GameList>> getGameList();
+    Observable<HttpResult<List<GameList>>> getGameList();
 }

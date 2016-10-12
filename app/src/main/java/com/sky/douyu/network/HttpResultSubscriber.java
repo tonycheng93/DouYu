@@ -1,5 +1,6 @@
-package com.sky.douyu.entity;
+package com.sky.douyu.network;
 
+import com.sky.douyu.entity.HttpResult;
 import com.sky.douyu.utils.Debugger;
 
 import rx.Subscriber;
