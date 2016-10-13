@@ -6,5 +6,5 @@ package com.sky.douyu.config;
 
 public abstract class Constant {
 
-    public static final String BASE_URL = "http://open.douyucdn.cn/api/RoomApi";
+    public static final String BASE_URL = "http://open.douyucdn.cn/api/RoomApi/";
 }

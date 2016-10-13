@@ -15,7 +15,7 @@ public abstract class HttpResultSubscriber<T> extends
     @Override
     public void onNext(HttpResult<T> httpResult) {
         if (httpResult.getError() == 0) {
-            Debugger.d(httpResult.toString());
+            Debugger.d(httpResult.getData().toString());
             onSuccess(httpResult);
         } else {
             onFail(new Throwable("error = " + httpResult.getError()));
